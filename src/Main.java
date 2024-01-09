@@ -30,6 +30,9 @@ public class Main {
         Airportcheckpoint.Exitdoor exitdoor = airportcheckpoint.new Exitdoor();
        Aircraft air = new Aircraft(104);
        air.setSost(Sostair.POSADKA);
+
+
+
        Bus bus = new Bus();
        Xray xray = new Xray();
        Smalltitle small = new Smalltitle(104, "Портленд", "Бостон", 11, 25, 31, air);
