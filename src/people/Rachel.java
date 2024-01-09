@@ -3,8 +3,7 @@ package people;
 
 import exception.InthewrongplaceException;
 import exception.Rechlostenergy;
-import people.actions.Bienieserdca;
-import people.actions.Speak;
+import people.actions.Heartbeat;
 import people.feelings.Moralfeelings;
 import people.feelings.Physicalfeelings;
 import place.*;
@@ -17,7 +16,7 @@ import things.*;
 import things.title.Title;
 import people.consciene.Formatcontact;
 
-public class Rachel extends Human implements Bienieserdca {
+public class Rachel extends Human implements Heartbeat {
    private Places rachelplace;
     private Clothe[] dress;
     private Moralfeelings moralfeelings = super.moralfeelings;
@@ -69,15 +68,15 @@ public class Rachel extends Human implements Bienieserdca {
                 }
             }
     }
-    public void vorvolas(Airport airport, Airport.Door door, Noise noise, Time time) throws InthewrongplaceException {
+    public void brokein(Airport airport, Airport.Door door, Noise noise, Time time) throws InthewrongplaceException {
         if(getX() == airport.getX() && getY() == airport.getY()){
             door.setRadius(90);
             door.setSpeed(2);
             noise.setVolume(door);
             noise.setSound(Sound.ANOTHERSOUND);
             rechplace = airport;
-            rastyapa();
-            sxvatit();
+            clumsy();
+            grab();
             time.setTick(1);//fast
 
         }
@@ -126,7 +125,7 @@ public class Rachel extends Human implements Bienieserdca {
                         getNois().setSound(Sound.SPEECH);
                         getNois().setVolume(180);
                         time.setTick(1);//fast
-                        vstrxvolos();
+                        shakehair();
                     }
                 }
             }
@@ -174,7 +173,7 @@ public class Rachel extends Human implements Bienieserdca {
 
         if(getX() == airport.getX() && getY() == airport.getX()){
             setRechplace(airport);
-            vorvolas(airport, door, noise, time);
+            brokein(airport, door, noise, time);
 
         }
     }
@@ -282,7 +281,8 @@ public class Rachel extends Human implements Bienieserdca {
         time.setTick(2);//normal
         }
     }
-    public void vstrxvolos(){
+    public void shakehair(){
+
         System.out.println("стряхивая с глаз вспотевшие волосы.");
     }
     private void hold() {
@@ -301,7 +301,6 @@ public class Rachel extends Human implements Bienieserdca {
                 setRechplace(transition);
                 hold();
                 look(transition, title, time, aircraft);
-                System.out.println();
                 try {
                     runspeed.speedcalculation(getEnergy());
                 } catch (Rechlostenergy e) {
@@ -340,7 +339,7 @@ public class Rachel extends Human implements Bienieserdca {
             }
             if(aircraft.getSost() == Sostair.OTPRAVLENIE){
                 System.out.println(" надпись «посадка» сменилась словом «отправление»");
-                krik(title);
+                scream(title);
             }
         }
    }
@@ -359,10 +358,10 @@ public class Rachel extends Human implements Bienieserdca {
     }
 
 
-    public void rastyapa(){
+    public void clumsy(){
         dress[3] = null;
     }
-    public void sxvatit(){
+    public void grab(){
             if (dress[3] == null) {
                 dress[3] = rechshoeright;
             }
@@ -375,7 +374,7 @@ public class Rachel extends Human implements Bienieserdca {
         dress[2] = rechhandbag;
         }
     }
-    public void krik(Title title){
+    public void scream(Title title){
         if(title.getSostair() == Sostair.OTPRAVLENIE){
             getNois().setVolume(180);
             getNois().setSound(Sound.ANOTHERSOUND);
@@ -383,8 +382,9 @@ public class Rachel extends Human implements Bienieserdca {
         }
     }
     @Override
-    public void bienieserdca(Noise noise){
-
+    public void heartbeat(Noise noise){
+        noise.setVolume(180);
+        noise.setSound(Sound.ANOTHERSOUND);
         System.out.println("Сердце в её груди прыгало, как заяц");
     }
 

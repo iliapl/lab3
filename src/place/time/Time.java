@@ -13,7 +13,7 @@ public class Time {
    public void setTick(int tick) throws TimelostException{
       this.tick = this.tick + tick;
       if(this.tick > 1000){
-         throw new TimelostException("Самолёт улетел");
+         throw new TimelostException("Рейчал осознала что точно не успеет на самолёт");
       }
    }
 

@@ -81,6 +81,7 @@ public abstract class Human{
         }
     }
     class Conscience{
+        private int hair;
         private int humancontact;
         private Formatcontact formatcontact;
         public void contact(Human human, Formatcontact formatcontact){//gпосмотреть про наследуемсоть вложенных классов
