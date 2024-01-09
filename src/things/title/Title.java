@@ -35,7 +35,7 @@ public class Title {
         }
         this.nomervix = nomer;
         air = new Aircraft(reisname);
-        setSostair(aircraft);
+
     }
 
     public void setSostair(Aircraft aircraft) {

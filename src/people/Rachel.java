@@ -3,7 +3,6 @@ package people;
 
 import exception.InthewrongplaceException;
 import exception.Rechlostenergy;
-import exception.TimelostException;
 import people.actions.Bienieserdca;
 import people.actions.Speak;
 import people.feelings.Moralfeelings;
@@ -15,18 +14,12 @@ import place.speed.Runspeed;
 import place.speed.Speeds;
 import place.time.Time;
 import things.*;
-import things.title.Bigtitle;
-import things.title.Smalltitle;
 import things.title.Title;
 import people.consciene.Formatcontact;
 
-public class Rachel extends Human implements Speak, Bienieserdca {
-    private Title vosprinimatokruzhauschienadpisi;
+public class Rachel extends Human implements Bienieserdca {
    private Places rachelplace;
-    private boolean  zametivshaya;
-    private boolean sxvativshaia;
     private Clothe[] dress;
-    private boolean otdavshaiahandbag;
     private Moralfeelings moralfeelings = super.moralfeelings;
     private boolean uvidevshaiauborkunadpisi=false;
     private int patience;
@@ -53,6 +46,7 @@ public class Rachel extends Human implements Speak, Bienieserdca {
         setEnergy(100);
         patience = 3;
         panic = 0;
+        painside = 0;
         consciencerachel = new Rachel.Consciencerachel();
         head = new Head();
     }
@@ -291,20 +285,6 @@ public class Rachel extends Human implements Speak, Bienieserdca {
     public void vstrxvolos(){
         System.out.println("стряхивая с глаз вспотевшие волосы.");
     }
-    @Override
-    public void speak(){
-        if(uvidevshaiauborkunadpisi){
-            System.out.println("— Он улетел? — спросила она недоверчиво. — Правда улетел? ");
-        }
-    }
-    public void vospriniatnadpisi(Title nadpis){
-        vosprinimatokruzhauschienadpisi = nadpis;
-    }
-    public void takeoff(Controller controller){//!
-        consciencerachel.contact(controller, Formatcontact.MESSAGE);
-        dress[2] = null;
-        System.out.println("почти швырнула сумку контролерше");
-    }
     private void hold() {
             if (getPhysicalfeelings() == Physicalfeelings.USTAL) {
                 painlegs = painlegs + 5;
@@ -364,11 +344,6 @@ public class Rachel extends Human implements Speak, Bienieserdca {
             }
         }
    }
-   public void look(Duty duty, Smalltitle smalltitle){
-        consciencerachel.contact(duty, Formatcontact.WAIT);
-        head.turnonthehuman(duty);
-        duty.deletenadpis(smalltitle);
-   }
    public void speak(Duty duty){
         consciencerachel.contact(duty, Formatcontact.MESSAGE);
        getNois().setSound(Sound.SPEECH);
@@ -400,11 +375,6 @@ public class Rachel extends Human implements Speak, Bienieserdca {
         dress[2] = rechhandbag;
         }
     }
-
-    public void carabcat(){
-        System.out.println("Эскалатор уходил в ночь, и она карабкалась по ступенькам, ощущая во рту привкус меди");
-        physicalfeelings = Physicalfeelings.METMOUF;
-    }
     public void krik(Title title){
         if(title.getSostair() == Sostair.OTPRAVLENIE){
             getNois().setVolume(180);
@@ -420,5 +390,10 @@ public class Rachel extends Human implements Speak, Bienieserdca {
 
     public Handbag getRechhandbag() {
         return rechhandbag;
+    }
+    public void takeoff(Controller controller){//!
+        consciencerachel.contact(controller, Formatcontact.MESSAGE);
+        dress[2] = null;
+        System.out.println("почти швырнула сумку контролерше");
     }
 }

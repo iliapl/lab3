@@ -8,7 +8,7 @@ import things.Clothe;
 import things.Clothes;
 import place.time.Time;
 
-public class Controller extends Human implements Speak {
+public class Controller extends Human{
     private int x;
     private int y;
     private int z;
@@ -20,9 +20,6 @@ public class Controller extends Human implements Speak {
        this.z =airportcheckpoint.getZ() + 1;
        consciencecontroller = new Consciencecontroller();
    }
-    @Override
-    public void speak(){}
-    public void look(){}
 
     public boolean take(Rachel rachel, Controller controller, Time time){
         if(rachel.consciencerachel.getHumancontact() == controller.hashCode()){
