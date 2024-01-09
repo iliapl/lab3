@@ -32,7 +32,6 @@ public class Main {
        air.setSost(Sostair.POSADKA);
 
 
-
        Bus bus = new Bus();
        Xray xray = new Xray();
        Smalltitle small = new Smalltitle(104, "Портленд", "Бостон", 11, 25, 31, air);
