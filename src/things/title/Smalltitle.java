@@ -1,0 +1,23 @@
+package things.title;
+
+import things.Aircraft;
+
+import java.util.Objects;
+
+public class Smalltitle extends Title {
+    public Smalltitle(int reisname, String citynaznachenia, String cityotpravlenia, int chas, int  minut, int nomer, Aircraft aircraft){
+        super(reisname, citynaznachenia, cityotpravlenia, chas, minut, nomer, aircraft);
+    }
+    @Override
+    public String toString(){
+        return  "Рейс " + reisname + ". " + cityotpravlenia + "-" + citynaznachenia + "." + chas + ":" + minut;
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(chas,citynaznachenia, cityotpravlenia, reisname, minut, nomervix);
+    }
+    @Override
+    public boolean equals(Object obj){
+        return super.equals(obj);
+    }
+}
