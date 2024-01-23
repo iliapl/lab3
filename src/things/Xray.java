@@ -20,7 +20,12 @@ public class Xray implements Scan {
         if(controller.put(rachel,controller, time)){
             class Display{
                 public boolean check(Rachel rachel){
-                    return rachel.getRechhandbag().getVolume()[0]==null;
+                    if(rachel.getRechhandbag().getVolume()[0]==null){
+                        return rachel.getRechhandbag().getVolume()[0]==null;
+                    }
+                   else{
+                       return rachel.getRechhandbag().getVolume()[0].itemstatus == Itemstatus.Permitteditems;
+                   }
                 }
             }
             Display display = new Display();
