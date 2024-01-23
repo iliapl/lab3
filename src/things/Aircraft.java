@@ -1,7 +1,10 @@
 package things;
 
+import place.time.Time;
+import things.actinios.Fly;
+
 import java.util.Objects;
-public class Aircraft {
+public class Aircraft implements Fly {
     private Sostair sost;
     private int name;
     public Aircraft(int name){
@@ -21,6 +24,10 @@ public class Aircraft {
 
     public int getName() {
         return name;
+    }
+    @Override
+    public void fly(){
+            sost=Sostair.OTPRAVLENIE;
     }
 
     @Override

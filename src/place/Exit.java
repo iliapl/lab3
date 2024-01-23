@@ -5,6 +5,5 @@ public class Exit extends Place {
         setX(airport.getLength());
         setY(airport.getWidth());
         setZ(airport.getHigh());
-
     }
 }

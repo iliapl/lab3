@@ -16,21 +16,6 @@ public class Airportcheckpoint extends Place {
         this.width = 1 + getY();
         this.volume = length * high * width;
     }
-    public void setHigh(int high) {
-        this.high = high;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHigh() {
-        return high;
-    }
 
     public int getLength() {
         return length;
@@ -39,15 +24,6 @@ public class Airportcheckpoint extends Place {
     public int getWidth() {
         return width;
     }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
     public class Door extends Place.Door{
 
     }

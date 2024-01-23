@@ -8,19 +8,6 @@ public class Airport extends Place {
     private int high = 10 + getZ();
     private int width = 10 + getY();
     private int volume = length * high * width;
-
-    public void setHigh(int high) {
-        this.high = high;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
     public int getHigh() {
         return high;
     }

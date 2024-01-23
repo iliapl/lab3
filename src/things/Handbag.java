@@ -11,4 +11,7 @@ public class Handbag  extends Clothe{
     public Item[] getVolume() {
         return volume;
     }
+    public void setItem(Item item){
+        volume[0] = item;
+    }
 }

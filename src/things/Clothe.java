@@ -1,7 +1,5 @@
 package things;
 
-import things.title.Title;
-
 import java.util.Objects;
 
 public class Clothe {

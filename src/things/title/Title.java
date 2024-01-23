@@ -1,5 +1,8 @@
 package things.title;
 
+import people.Controller;
+import people.Rachel;
+import place.time.Time;
 import things.Aircraft;
 import things.Sostair;
 
@@ -13,7 +16,7 @@ public class Title {
     protected int minut;
     protected int nomervix;
     protected Sostair sostair;
-    Aircraft air;
+    Aircraft unrealair;
 
     public Title(int reisname, String citynaznachenia, String cityotpravlenia, int chas, int minut, int nomer, Aircraft aircraft) {
         this.reisname = reisname;
@@ -34,14 +37,21 @@ public class Title {
             this.minut = 0;
         }
         this.nomervix = nomer;
-        air = new Aircraft(reisname);
+        unrealair = new Aircraft(reisname);
+        var air = new Aircraft(reisname){
+            public void check(){
+                if (aircraft.equals(unrealair)) {
+                   sostair = aircraft.getSost();
+                }
+            }
+        };
+        air.check();
 
     }
 
     public void setSostair(Aircraft aircraft) {
-        if (aircraft.equals(air)) {
+        if (aircraft.equals(unrealair)) {
             this.sostair = aircraft.getSost();
-
         }
     }
 

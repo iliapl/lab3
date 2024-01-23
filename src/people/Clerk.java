@@ -1,10 +1,7 @@
 package people;
 
-import exception.TimelostException;
-import people.actions.Speak;
 import place.Airport;
 import place.Place;
-import place.Places;
 import place.sound.Noise;
 import people.consciene.Formatcontact;
 import place.sound.Sound;

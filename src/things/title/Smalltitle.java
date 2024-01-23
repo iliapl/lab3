@@ -1,7 +1,6 @@
 package things.title;
 
 import things.Aircraft;
-
 import java.util.Objects;
 
 public class Smalltitle extends Title {

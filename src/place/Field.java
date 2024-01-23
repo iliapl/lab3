@@ -4,11 +4,6 @@ public class Field extends Place{
     private int length;
     private int high;
     private int width;
-
-    public void setHigh(int high) {
-        this.high = high;
-    }
-
     public void setLength(int length) {
         this.length = length;
     }

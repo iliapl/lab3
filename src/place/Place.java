@@ -2,7 +2,13 @@ package place;
 
 import java.util.Objects;
 
-public abstract class Place {
+public class Place {
+    private int length;
+
+    public int getLength() {
+        return length;
+    }
+
     private int x;
     private int y;
     private int z;
@@ -52,16 +58,6 @@ public abstract class Place {
         public void setSpeed(int speed) {
             this.speed = speed;
         }
-
-        public void setY(int y) {
-            this.y = y;
-        }
-
-        public void setX(int x) {
-            this.x = x;
-        }
-
-
         public int getRadius() {
             return radius;
         }

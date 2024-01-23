@@ -1,6 +1,7 @@
 package place.time;
 
 import exception.TimelostException;
+import people.Rachel;
 
 public class Time {
    private int tick;

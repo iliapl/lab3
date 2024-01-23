@@ -1,14 +1,15 @@
 package people;
 
+import people.actions.Deletetitle;
 import people.consciene.Formatcontact;
 import place.Exit;
 import place.sound.Sound;
 import things.Sostair;
 import things.title.Smalltitle;
-public class Duty extends Human {
+public class Duty extends Human implements Deletetitle {
     public Duty(Exit exit){
         super(exit.getX(), exit.getY(), exit.getZ());
-        conscienceduty = new Conscienceduty();
+        conscienceduty = new Conscience();
         dutyhead = new Dutyhead();
     }
 
@@ -16,15 +17,15 @@ public class Duty extends Human {
         if (rachel.getNois().getVolume() == 180) {
             if (rachel.getNois().getSound() == Sound.SPEECH) {
                 if(rachel.consciencerachel.getHumancontact() == hashCode()){
-                    dutyhead.turnonthehuman(rachel);
+                    dutyhead.turnon(rachel);
                     conscienceduty.contact(rachel, Formatcontact.RESPONSE);
                     System.out.println("Дежурный сочувственно посмотрел на нее.");
                 }
             }
         }
     }
-
-    public Smalltitle deletenadpis(Smalltitle smallnadpis) {
+    @Override
+    public Smalltitle deletetitle(Smalltitle smallnadpis) {
         String c = smallnadpis.toString();
         if (smallnadpis.getSostair() == Sostair.OTPRAVLENIE) {
             System.out.println(" дежурный убирает надпись. " + c);
@@ -32,10 +33,7 @@ public class Duty extends Human {
         }
         return  smallnadpis;
     }
-   public class Conscienceduty extends Conscience{
-
-   }
-   Conscienceduty conscienceduty;
+   Conscience conscienceduty;
     public class Dutyhead extends Head{
 
     }

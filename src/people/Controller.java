@@ -1,14 +1,13 @@
 package people;
 
-import exception.TimelostException;
-import people.actions.Speak;
+import people.actions.Put;
+import people.actions.Take;
 import people.consciene.Formatcontact;
 import place.Airportcheckpoint;
 import things.Clothe;
-import things.Clothes;
 import place.time.Time;
 
-public class Controller extends Human{
+public class Controller extends Human implements Put, Take {
     private int x;
     private int y;
     private int z;
@@ -18,9 +17,9 @@ public class Controller extends Human{
        this.x = airportcheckpoint.getX() + 1;
        this.y = airportcheckpoint.getY() + 1;
        this.z =airportcheckpoint.getZ() + 1;
-       consciencecontroller = new Consciencecontroller();
+       consciencecontroller = new Conscience();
    }
-
+@Override
     public boolean take(Rachel rachel, Controller controller, Time time){
         if(rachel.consciencerachel.getHumancontact() == controller.hashCode()){
             consciencecontroller.contact(rachel, Formatcontact.WAIT);
@@ -29,16 +28,14 @@ public class Controller extends Human{
         time.setTick(1);//fast
         return Formatcontact.WAIT == consciencecontroller.getFormatcontact();
     }
-    public boolean postav(Rachel rachel, Controller controller, Time time)  {
+    @Override
+    public boolean put(Rachel rachel, Controller controller, Time time)  {
         if(take(rachel, controller, time)){
             clothes[0] = null;
         }
         time.setTick(1);//fast
         return clothes[0] == null;
     }
-    class Consciencecontroller extends Conscience{
-
-    }
-    private Consciencecontroller consciencecontroller;
+    private Conscience consciencecontroller;
 
 }
