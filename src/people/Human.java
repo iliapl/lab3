@@ -3,6 +3,8 @@ package people;
 import java.util.Objects;
 
 import exception.Rechlostenergy;
+import people.actions.Turnon;
+import people.actions.Turnonhuman;
 import people.consciene.Formatcontact;
 import people.haircondition.Haircondition;
 import place.Place;
@@ -59,7 +61,7 @@ public abstract class Human{
         this.z = z;
     }
     public Human(){}
-    public class Head {
+    public class Head implements Turnon, Turnonhuman {
         private double turningradius=0;
 
         public void setTurningradius(double turningradius) {
@@ -69,11 +71,12 @@ public abstract class Human{
         public double getTurningradius() {
             return turningradius;
         }
-
+@Override
         public void turnon(Place.Door door){
             setTurningradius( (90 - Math.asin((Math.abs(door.getY()) - Math.abs(y)) /
                     (Math.sqrt(Math.pow(Math.abs(door.getY()) - Math.abs(y),2)+ Math.pow(Math.abs(door.getX()) - Math.abs(x),2))))));
         }
+        @Override
         public void turnon(Human human){
             setTurningradius( (90 - Math.asin((Math.abs(human.getY()) - Math.abs(y)) /
                     (Math.sqrt(Math.pow(Math.abs(human.getY()) - Math.abs(y),2)+ Math.pow(Math.abs(human.getX()) - Math.abs(x),2))))));
