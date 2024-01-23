@@ -26,8 +26,13 @@ public class Aircraft implements Fly {
         return name;
     }
     @Override
-    public void fly(){
+    public void fly(Time time){
+        if(time.getTick() >= 40){
             sost=Sostair.OTPRAVLENIE;
+        }
+        else{
+            System.out.println("Самолёт не может взлететь сейчас, время вылета не настало");
+        }
     }
 
     @Override

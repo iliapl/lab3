@@ -119,7 +119,6 @@ public abstract class Human{
             this.formatcontact = formatcontact;
         }
     }
-
     public int getEnergy(Time time) throws Rechlostenergy{
         if (energy<=0){
             energy = 5;

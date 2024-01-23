@@ -1,5 +1,7 @@
 package things.actinios;
 
+import place.time.Time;
+
 public interface Fly {
-    public void fly();
+    public void fly(Time time);
 }

@@ -54,7 +54,7 @@ public class Main {
        xray.scan(controller,rachel,time);
        rachel.takehandbag(xray);
        rachel.run(airportcheckpoint, time, runspeed, exitdoor, noise, transition, exit, big, air);
-       air.fly();
+       air.fly(time);
        big.setSostair(air);
        small.setSostair(air);
        rachel.look(transition, big, air);
